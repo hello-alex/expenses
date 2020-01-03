@@ -1,14 +1,21 @@
 #!/bin/sh
 
-npm run build
-rm -rf ../website/expenses
-cp -a build/. ../website/expenses
+if [ $# -eq 0 ]
+  then
+    echo "Add a commit message"
+    return 1
+fi
 
-# if [ $# -eq 0 ]
-#   then
-#     echo "Add a commit message"
-#     return 1
-# fi
+git add -A 
+git commit -m "$1"
+git push
+
+cd ../website
+git add -A
+git cm -m "deploy expenses: $1"
+git push
+cd -
+
 
 # git add .
 # git commit -m "$1"
