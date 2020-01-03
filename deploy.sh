@@ -3,7 +3,7 @@
 if [ $# -eq 0 ]
   then
     echo "Add a commit message"
-    return 1
+    exit 1
 fi
 
 git add -A 
