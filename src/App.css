@@ -41,7 +41,7 @@ a.material-icons {
 
 @media (min-width: 1024px) {
   .app-fab--absolute {
-    bottom: 3rem;
+    bottom: 10rem;
     right: 5rem;
   }
 }
