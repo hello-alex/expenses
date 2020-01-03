@@ -1,7 +1,7 @@
 .app-fab--absolute {
   position: fixed;
-  bottom: 10rem;
-  right: 5rem;
+  bottom: 5rem;
+  right: 3rem;
 }
 
 header.mdc-toolbar {
