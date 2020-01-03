@@ -16,12 +16,13 @@ class App extends Component {
 
     this.clientId =
       "1055507191707-v49kdg3f2d60pt1karsvpl2l8giu831i.apps.googleusercontent.com";
-    this.spreadsheetId =
-      process.env.REACT_APP_SHEET_ID ||
-      "1aNGn8GLCsixjVehrJUPnLv0OIKXeyO0XGOyT3QOtZDY";
+    // this.spreadsheetId =
+    //   process.env.REACT_APP_SHEET_ID ||
+    //   "1aNGn8GLCsixjVehrJUPnLv0OIKXeyO0XGOyT3QOtZDY";
 
     this.state = {
       signedIn: undefined,
+      email: undefined,
       accounts: [],
       categories: [],
       expenses: [],
@@ -56,9 +57,22 @@ class App extends Component {
     });
   }
 
+  spreadsheetId = () => {
+    if (process.env.REACT_APP_SHEET_ID) return process.env.REACT_APP_SHEET_ID;
+
+    switch (this.state.email) {
+      case "adz26@cornell.edu":
+        return "1aNGn8GLCsixjVehrJUPnLv0OIKXeyO0XGOyT3QOtZDY";
+      default: 
+        return "";
+    }
+  }
+
   signedInChanged = (signedIn) => {
     this.setState({ signedIn: signedIn });
     if (this.state.signedIn) {
+      const email = window.gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getEmail();
+      this.setState({ email: email });
       this.load();
     }
   }
@@ -94,7 +108,7 @@ class App extends Component {
     const expenseRow = expense.id.substring(10);
     window.gapi.client.sheets.spreadsheets
       .batchUpdate({
-        spreadsheetId: this.spreadsheetId,
+        spreadsheetId: this.spreadsheetId(),
         resource: {
           requests: [
             {
@@ -175,7 +189,7 @@ class App extends Component {
 
   append(expense) {
     return window.gapi.client.sheets.spreadsheets.values.append({
-      spreadsheetId: this.spreadsheetId,
+      spreadsheetId: this.spreadsheetId(),
       range: "Expenses!A1",
       valueInputOption: "USER_ENTERED",
       insertDataOption: "INSERT_ROWS",
@@ -185,7 +199,7 @@ class App extends Component {
 
   update(expense) {
     return window.gapi.client.sheets.spreadsheets.values.update({
-      spreadsheetId: this.spreadsheetId,
+      spreadsheetId: this.spreadsheetId(),
       range: expense.id,
       valueInputOption: "USER_ENTERED",
       values: [this.formatExpense(expense)]
@@ -195,7 +209,7 @@ class App extends Component {
   load() {
     window.gapi.client.sheets.spreadsheets.values
       .batchGet({
-        spreadsheetId: this.spreadsheetId,
+        spreadsheetId: this.spreadsheetId(),
         ranges: [
           "Data!A2:A50",
           "Data!E2:E50",
