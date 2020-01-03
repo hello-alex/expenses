@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import ExpenseIcon from "./ExpenseIcon";
 
+
+const MONTHS = ["January", "February", "March", "April", "May", "June", 
+                "July", "August", "September", "October", "November", "December"];
+
 export default class ExpenseDetail extends Component {
+
   formatDate(date) {
-    return date;
+    const dateParts = date.split("-");
+    const month = MONTHS[Number(dateParts[1]) - 1];
+    const day = String(Number(dateParts[2]));
+    const year = dateParts[0];
+    return `${month} ${day}, ${year}`;
   }
 
   render() {
@@ -19,7 +28,7 @@ export default class ExpenseDetail extends Component {
             : ""}
           <span className="mdc-list-item__text__secondary">
             {this.formatDate(this.props.expense.date)}
-            {` ${this.props.expense.category}`}
+            {` • ${this.props.expense.category}`}
           </span>
         </span>
         <span className="mdc-list-item__end-detail">
