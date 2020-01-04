@@ -10,9 +10,18 @@ input, select {
 .mdc-textfield, .mdc-textfield--upgraded {
   width: 100%;
 }
-/* input[type=button] {
-  background-color: coral;
-} */
+input.Delete[type=button] {
+  background-color: rgb(235, 76, 76);
+  max-width: 100px;
+}
+input.Close[type=button] {
+  background-color: lightskyblue;
+  max-width: 100px;
+}
+input[type=submit] {
+  background-color: #50d29d;
+  max-width: 100px;
+}
 .mdc-form-field {
   display: block;
 }
