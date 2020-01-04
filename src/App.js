@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MetaTags from 'react-meta-tags';
 import { ExpenseList, ExpenseForm, LoadingBar } from "./components/index";
 import { MDCSnackbar } from "@material/snackbar/dist/mdc.snackbar.js";
 
@@ -242,6 +243,9 @@ class App extends Component {
   render() {
     return (
       <div>
+        <MetaTags>
+          <meta name="apple-mobile-web-app-status-bar-style" content="default"></meta>
+        </MetaTags>
         <header className="mdc-toolbar mdc-toolbar--fixed">
           <div className="mdc-toolbar__row">
             <section className="mdc-toolbar__section mdc-toolbar__section--align-start">
