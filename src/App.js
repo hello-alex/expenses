@@ -33,7 +33,6 @@ class App extends Component {
       previousMonth: undefined,
       showExpenseForm: false
     };
-
   }
 
   componentDidMount() {
@@ -64,6 +63,8 @@ class App extends Component {
     switch (this.state.email) {
       case "adz26@cornell.edu":
         return "1aNGn8GLCsixjVehrJUPnLv0OIKXeyO0XGOyT3QOtZDY";
+      case "adlee921@gmail.com":
+        return "1-H7dtn8shY9Iq8hzEpv0bkrfoVlOZo1-SJNs6WArGt0";
       default: 
         return "";
     }
