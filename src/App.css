@@ -1,3 +1,8 @@
+.AppContainer {
+  max-width: 800px;
+  margin: auto;
+}
+
 .app-fab--absolute {
   position: fixed;
   bottom: 5rem;
@@ -41,6 +46,7 @@ a.material-icons {
 
 @media (min-width: 1024px) {
   .app-fab--absolute {
+    position: fixed;
     bottom: 10rem;
     right: 5rem;
   }

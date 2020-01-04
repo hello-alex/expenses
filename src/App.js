@@ -242,7 +242,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="AppContainer">
         <MetaTags>
           <meta name="apple-mobile-web-app-status-bar-style" content="default"></meta>
         </MetaTags>
