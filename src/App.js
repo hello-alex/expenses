@@ -245,7 +245,7 @@ class App extends Component {
     return (
       <div className="AppContainer">
         <MetaTags>
-          <meta name="apple-mobile-web-app-status-bar-style" content="default"></meta>
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
         </MetaTags>
         <header className="mdc-toolbar mdc-toolbar--fixed">
           <div className="mdc-toolbar__row">
