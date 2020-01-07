@@ -67,7 +67,7 @@ class App extends Component {
         return "1-H7dtn8shY9Iq8hzEpv0bkrfoVlOZo1-SJNs6WArGt0";
       case "axz2001@columbia.edu":
         return "1gaL1COJVmMPllYRSLkAIRKwueLtRa3Rn-khozpj9meA";
-      default: 
+      default:
         return "";
     }
   }
