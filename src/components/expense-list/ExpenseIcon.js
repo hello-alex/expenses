@@ -20,13 +20,15 @@ export default class ExpenseIcon extends Component {
       case "Health":
         return "local_hospital";
       case "Entertainment":
-        return "local_movies";
+        return "movie_filter";
       case "Transport":
         return "directions_bus";
-      case "Bambino":
-        return "face";
       case "Travel":
-        return "flight";
+        return "flight_takeoff";
+      case "Online Subscriptions": 
+        return "computer";
+      // case "Clothing":
+      //   return "add_shopping_cart_icon";
       default:
         return "attach_money";
     }
