@@ -61,6 +61,7 @@ class ExpenseForm extends Component {
           this.form = form;
         }}
         noValidate
+        autoCapitalize="words"
       >
         <aside className="mdc-dialog" ref={this.initializeDeleteModal}>
           <div className="mdc-dialog__surface">

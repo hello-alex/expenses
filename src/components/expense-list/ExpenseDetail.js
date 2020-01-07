@@ -24,7 +24,7 @@ export default class ExpenseDetail extends Component {
         <ExpenseIcon category={this.props.expense.category} />
         <span className="mdc-list-item__text">
           {this.props.expense.description
-            ? `${this.props.expense.description.replace(/^(.{14}).+/, "$1…")}`
+            ? `${this.props.expense.description.replace(/^(.{25}).+/, "$1…")}`
             : ""}
           <span className="mdc-list-item__text__secondary">
             {this.formatDate(this.props.expense.date)}
