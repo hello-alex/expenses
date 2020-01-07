@@ -61,7 +61,6 @@ class ExpenseForm extends Component {
           this.form = form;
         }}
         noValidate
-        autoCapitalize="word"
       >
         <aside className="mdc-dialog" ref={this.initializeDeleteModal}>
           <div className="mdc-dialog__surface">
@@ -130,6 +129,7 @@ class ExpenseForm extends Component {
               value={this.props.expense.description}
               onChange={this.handleInputChange}
               type="text"
+              autocapitalize="word"
             />
             <label className="mdc-textfield__label">Description</label>
           </div>

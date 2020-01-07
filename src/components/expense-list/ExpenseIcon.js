@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 export default class ExpenseIcon extends Component {
+  
+  // https://material-ui.com/components/material-icons/
   iconFrom(category) {
     switch (category) {
       case "Groceries":
