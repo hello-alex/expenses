@@ -129,7 +129,7 @@ class ExpenseForm extends Component {
               value={this.props.expense.description}
               onChange={this.handleInputChange}
               type="text"
-              autoCapitalize="words"
+              autocapitalize="word"
             />
             <label className="mdc-textfield__label">Description</label>
           </div>
