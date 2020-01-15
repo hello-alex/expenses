@@ -1,6 +1,5 @@
 {
   "name": "expenses",
-  "homepage": "https://azhang.io/expenses",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
