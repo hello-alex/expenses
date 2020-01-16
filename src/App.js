@@ -234,8 +234,7 @@ class App extends Component {
           categories: categories,
           expenses: (response.result.valueRanges[2].values || [])
             .map(this.parseExpense)
-            .reverse()
-            .slice(0, 30),
+            .reverse(),
           processing: false,
           currentMonth: response.result.valueRanges[3].values[0][0],
           previousMonth: response.result.valueRanges[4].values[0][0]
